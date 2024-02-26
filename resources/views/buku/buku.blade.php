@@ -19,9 +19,10 @@
                                 <tr>
                                    
                                     <th>Judul Buku</th>
-                                    <th>Pengarang</th>
+                                    <th>Penulis</th>
                                     <th>Penerbit</th>
                                     <th>Tahun Terbit</th>
+                                    <th class="col-2 px-4 py-2">Aksi</th>
                                     
                                 </tr>
                             </thead>
@@ -33,8 +34,22 @@
                                         <td>{{ $b->penulis }}</td>
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
-                                        
+                                        <td>
+                                            <form action="{{ route('buku.delete', $b->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"> <i class="fa-solid fa-trash"></i>                                              
+                                                </button>
+
+                                                <a class="btn btn-primary" href="{{ route('buku.edit', $b->id) }}">
+                                                    <i class="fa fa-file-pen"></i></a>
+                                    </form>
+                                        </td>
                                     </tr>
+                                    
+                                        
+                                        
+                                    
                                 @empty
                                     <tr>
                                         <td colspan="6" class="text-center">Tidak ada data buku.</td>

@@ -1,73 +1,57 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.dashboard')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <div class="container mx-auto py-4">
-                        <div class="flex justify-center">
-                            <div class="w-full md:w-1/2">
-                                <div class="bg-white rounded-lg shadow-md">
-                                    <div class="p-6">
-                                        @if(session('success'))
-                                        <p class="text-success">{{ session('success') }}</p>
-                                        @endif
+@section('content')
 
-                                        <form action="{{ route('buku.store') }}" method="post"
-                                            enctype="multipart/form-data">
-                                            @csrf
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="h3 text-2xl font-semibold mb-4">Formulir Input Buku</h1>
+                    </div>
 
-                                            <div class="mb-4">
-                                                <label for="judul"
-                                                    class="block text-sm font-semibold mb-2">Judul:</label>
-                                                <input type="text" name="judul" class="w-full border p-2" required>
-                                            </div>
+                    <div class="card-body">
+                        @if(session('success'))
+                            <p class="text-success">{{ session('success') }}</p>
+                        @endif
 
-                                            <div class="mb-4">
-                                                <label for="penulis"
-                                                    class="block text-sm font-semibold mb-2">Penulis:</label>
-                                                <input type="text" name="penulis" class="w-full border p-2" required>
-                                            </div>
+                        <form action="{{ route('buku.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
 
-                                            <div class="mb-4">
-                                                <label for="penerbit"
-                                                    class="block text-sm font-semibold mb-2">Penerbit:</label>
-                                                <input type="text" name="penerbit" class="w-full border p-2" required>
-                                            </div>
-
-                                            <div class="mb-4">
-                                                <label for="tahun_terbit" class="block text-sm font-semibold mb-2">Tahun
-                                                    Terbit:</label>
-                                                <input type="number" name="tahun_terbit" class="w-full border p-2"
-                                                    required>
-                                            </div>
-
-                                            <div class="mb-4">
-                                                <label for="kategori_id"
-                                                    class="block text-sm font-semibold mb-2">Kategori:</label>
-                                                <select name="kategori_id" class="w-full border p-2" required>
-                                                    @foreach($kategori as $k)
-                                                    <option value="{{ $k->id }}">{{ $k->nama_kategori }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-
-                                            <button type="submit"
-                                                class="bg-blue-500 text-black border py-2 px-4 rounded">Simpan</button>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="mb-4">
+                                <label for="judul" class="form-label">Judul:</label>
+                                <input type="text" name="judul" class="form-control" required>
                             </div>
-                        </div>
+
+                            <div class="mb-4">
+                                <label for="penulis" class="form-label">Penulis:</label>
+                                <input type="text" name="penulis" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="penerbit" class="form-label">Penerbit:</label>
+                                <input type="text" name="penerbit" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="tahun_terbit" class="form-label">Tahun Terbit:</label>
+                                <input type="number" name="tahun_terbit" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="kategori_id" class="form-label">Kategori:</label>
+                                <select name="kategori_id" class="form-control" required>
+                                    @foreach($kategori as $k)
+                                        <option value="{{ $k->id }}">{{ $k->nama_kategori }}</option>
+                                    @endforeach
+                                </select>
+                           </div>
+
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

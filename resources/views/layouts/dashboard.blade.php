@@ -37,6 +37,7 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{  asset ('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{  asset ('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Page CSS -->
 
@@ -117,23 +118,13 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item active open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <li class="menu-item ">
+              <a href="{{ route('dashboard') }}" class="menu-link">
+                <class="menu-link">
                 <div data-i18n="Dashboards">Dashboards</div>
-                <div class="badge bg-danger rounded-pill ms-auto">5</div>
+              
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a
-                    href="{{ route('dashboard') }}"
-                    
-                    class="menu-link">
-                    <div data-i18n="CRM">Dashboard</div>
-                    
-                  </a>
-                </li>
-                <li class="menu-item active">
+                <li class="menu-item ">
                   <a href="{{ route('kategori') }}" class="menu-link">
                     <div data-i18n="Analytics">Data Kategori</div>
                   </a>
