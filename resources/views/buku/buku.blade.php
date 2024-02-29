@@ -18,10 +18,11 @@
                             <thead>
                                 <tr>
                                    
+                                    <th>Foto</th>
                                     <th>Judul Buku</th>
                                     <th>Penulis</th>
                                     <th>Penerbit</th>
-                                    <th>Tahun Terbit</th>
+                                    <th>Tahun Terbit</th>              
                                     <th class="col-2 px-4 py-2">Aksi</th>
                                     
                                 </tr>
@@ -29,6 +30,8 @@
                             <tbody>
                                 @forelse ($buku as $b)
                                     <tr>
+                                        <td>
+                                            <img src="{{ asset('storage/'.$b->foto) }}" alt="Foto Buku" width="100">
                                         
                                         <td>{{ $b->judul }}</td>
                                         <td>{{ $b->penulis }}</td>

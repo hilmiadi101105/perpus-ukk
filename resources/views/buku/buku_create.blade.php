@@ -33,9 +33,17 @@
                                 <input type="text" name="penerbit" class="form-control" required>
                             </div>
 
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <label for="tahun_terbit" class="form-label">Tahun Terbit:</label>
-                                <input type="number" name="tahun_terbit" class="form-control" required>
+                                <select name="tahun_terbit" class="form-select custom-select" required>
+                                    @php
+                                        $currentYear = date('Y');
+                                        $startYear = 1900; // You can adjust the start year as needed
+                                    @endphp
+                                    @for($year = $currentYear; $year >= $startYear; $year--)
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endfor
+                                </select>
                             </div>
 
                             <div class="mb-4">
@@ -45,6 +53,11 @@
                                         <option value="{{ $k->id }}">{{ $k->nama_kategori }}</option>
                                     @endforeach
                                 </select>
+                           </div>
+
+                           <div class="mb-3">
+                            <label for="foto" class="form-label">Foto Buku</label>
+                            <input type="file" name="foto" accept="image/*" class="form-control" required>
                            </div>
 
                             <button type="submit" class="btn btn-primary">Simpan</button>

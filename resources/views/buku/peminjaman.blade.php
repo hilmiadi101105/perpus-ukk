@@ -39,7 +39,7 @@
                                             <form action="{{ route('peminjaman.kembalikan', $p->id) }}" method="post">
                                                 @csrf
                                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white border font-bold py-2 px-4 rounded btn btn-success">
-                                                    Kembalikan
+                                                        Kembalikan
                                                 </button>
                                             </form>
                                         @else
