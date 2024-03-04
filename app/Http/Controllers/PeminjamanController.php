@@ -27,7 +27,8 @@ class PeminjamanController extends Controller
             'user_id'=> 'required|exists:users,id',
             'buku_id'=> 'required|exists:buku,id',
             'tanggal_peminjaman'=> 'required|date',
-            'tanggal_pengembalian' => 'required|date',
+            'tanggal_pengembalian' => 'required|date', 
+            
 
         ]);
         Peminjaman::create([

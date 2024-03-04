@@ -82,6 +82,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
+    Spatie\Permission\PermissionServiceProvider::class,
 
     'locale' => 'en',
 
