@@ -111,6 +111,7 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
+                    @role('admin')
                     <li class="menu-item ">
                         <a href="{{ route('dashboard') }}" class="menu-link">
                             <class="menu-link">
@@ -136,6 +137,14 @@
                           <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
                       </a>
                   </li>
+                  @endrole
+                  @role('user')
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('peminjaman.user')}}" class="menu-link">
+                          <i class="fas fa-fw fa-plus"></i>
+                          <span>Data Peminjaman</span></a>
+                  </li>
+                  @endrole
                    
                     <ul class="menu-sub">
                         <li class="menu-item">

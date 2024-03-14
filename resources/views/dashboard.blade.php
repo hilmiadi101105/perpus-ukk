@@ -10,6 +10,7 @@
             @endphp -->
 
         <div class="row">
+            @role('admin')
             <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100">
                     <div class="card-body">
@@ -26,6 +27,7 @@
                     </div>
                 </div>
             </div>
+          
             <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card border-left-success shadow h-100">
                     <div class="card-body">
@@ -59,6 +61,7 @@
                 </div>
             </div>
         </div>
+        @endrole
         <div class="card border-0 shadow-lg rounded-lg">
             <div class="card-body">
                 <div class="h3 text-gray-900 text-capitalize text-center"><i>
