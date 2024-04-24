@@ -29,10 +29,11 @@
                                             <form action="{{ route('kategori.hapus', $k->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"> <i class="fa-solid fa-trash"></i>                                              
+                                            <button type="submit" class="btn btn-danger"> 
+                                               hapus
                                             </button>
                                             <a class="btn btn-primary" href="{{ route('kategori.edit', $k->id) }}">
-                                                <i class="fa fa-file-pen"></i></a>
+                                               edit
                                             </form>
                                         </td>
                                     </tr>

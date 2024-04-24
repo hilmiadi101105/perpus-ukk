@@ -41,11 +41,11 @@
                                             <form action="{{ route('buku.delete', $b->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger"> <i class="fa-solid fa-trash"></i>                                              
+                                                <button type="submit" class="btn btn-danger"> hapus                                  
                                                 </button>
 
                                                 <a class="btn btn-primary" href="{{ route('buku.edit', $b->id) }}">
-                                                    <i class="fa fa-file-pen"></i></a>
+                                                    edit
                                     </form>
                                         </td>
                                     </tr>

@@ -27,7 +27,7 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'foto' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
             'judul' => 'required',
             'penulis' => 'required',
             'penerbit' => 'required',
@@ -53,7 +53,7 @@ class BukuController extends Controller
     {
         $buku = Buku::findOrFail($id);
         $kategori = Kategori::distinct()->get();
-        return view('buku.buku_edit', compact('buku', 'kategori'));
+        return view('buku.buku_edit', compact(['buku', 'kategori']));
     }
 
     public function update(Request $request, $id)
@@ -63,7 +63,7 @@ class BukuController extends Controller
             'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required|integer',
-            'kategori_id' => 'required',
+            
         ]);
 
         $buku = Buku::findOrFail($id);
@@ -98,5 +98,10 @@ class BukuController extends Controller
         $buku = Buku::all();
         return view ('welcome', ['buku' => $buku]);
     }
+
+    public function detail($id){
+        $buku = Buku::find($id);
+        return view('buku.buku_detail', ['buku' => $buku]);
+        }
 }
 

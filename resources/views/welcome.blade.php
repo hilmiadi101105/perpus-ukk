@@ -80,7 +80,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$b->judul}}</h5>
                         <p class="card-text">{{$b->deskripsi}}</p>
-                        <a href="#" class="btn btn-primary">Detail Buku</a>
+                        <a href="{{route('detail', $b->id) }}" class="btn btn-primary">Detail Buku</a>
                     </div>
                 </div>
             </div>
