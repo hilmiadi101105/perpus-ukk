@@ -94,6 +94,15 @@ class BukuController extends Controller
         return redirect('/buku')->with('success', 'Buku berhasil diperbarui!');
     }
 
+    public function destroy($id){
+        // Kategori::find($id)->destroy();
+        $buku = Buku::find($id);
+        $buku->delete();
+
+        return redirect('/buku');
+    }
+
+
     public function welcome(){
         $buku = Buku::all();
         return view ('welcome', ['buku' => $buku]);

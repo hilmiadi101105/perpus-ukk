@@ -60,7 +60,13 @@
                             <input type="file" name="foto" accept="image/*" class="form-control" required>
                            </div>
 
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                           <button onclick="myFunction()">Simpan</button>
+
+                           <script>
+                           function myFunction() {
+                             alert("data berhasil disimpan");
+                           }
+                           </script>
                         </form>
                     </div>
                 </div>

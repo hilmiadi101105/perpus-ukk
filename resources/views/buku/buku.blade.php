@@ -38,7 +38,7 @@
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
                                         <td>
-                                            <form action="{{ route('buku.delete', $b->id) }}" method="post">
+                                            <form action="{{ route('buku.delete', $b->id) }}" method="delete">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger"> hapus                                  
